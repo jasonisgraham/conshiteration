@@ -1,5 +1,5 @@
 module.exports = {
-    server: {
-        port: 9002
+    server: {	
+        port: process.env.PORT
     }
 };
