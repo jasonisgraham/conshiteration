@@ -40,35 +40,19 @@ define(function (require) {
     var uiRouter = require('angular-ui-router');
     var navigation = require('modules/navigation/navigation');
     var api = require('api/api');
-    var addProject = require('modules/add-project/add-project');
-    var addTag = require('modules/add-tag/add-tag');
-    var addPerson = require('modules/add-person/add-person');
-    var search = require('modules/search/search');
-    var searchResults = require('modules/search-results/search-results');
-    var resultDetail = require('modules/result-detail/result-detail');
-    var encounter = require('modules/encounter/encounter');
-    var characterDetail = require('modules/character-detail/character-detail');
+    var addBathroom = require('modules/add-bathroom/add-bathroom');
     var landing = require('modules/landing/landing');
-    var formUtils = require('form-utils/form-utils');
     var routerConfig = require('router-config');
 
-    var app = angular.module("conshiteration", [
+    var app = angular.module("pshartFinder", [
         'ui.bootstrap',
         'ui.router',
         navigation.name,
         api.name,
-        addProject.name,
-        addTag.name,
-        addPerson.name,
-        search.name,
-        searchResults.name,
-        resultDetail.name,
-        encounter.name,
-        characterDetail.name,
-	landing.name,
-        formUtils.name])
+        addBathroom.name,
+	      landing.name])
 
         .config(routerConfig);
 
-    angular.bootstrap(document.getElementsByTagName('body')[0], ['conshiteration']);
+    angular.bootstrap(document.getElementsByTagName('body')[0], ['pshartFinder']);
 });

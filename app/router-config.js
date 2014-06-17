@@ -1,12 +1,18 @@
 define([], function () {
+  'use strict';
+  console.log("router-config");
 
-    'use strict';
-
-    return function ($stateProvider, $urlRouterProvider) {
-
-        // If none of the above states are matched, use this as the fallback
-        $urlRouterProvider
-            .when("/home", "/landing")
-            .otherwise('/landing');
-    };
+  return function ($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('add-bathroom', {
+        url: "/add-bathroom",
+        templateUrl: "modules/add-bathroom/add-bathroom.html",
+        resolve: {
+          data: function (ApiService) {
+            console.log("add-bathroom");
+            return ApiService.getBathroomResults();
+          }
+        }
+      });
+  };
 });

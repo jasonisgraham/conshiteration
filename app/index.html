@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+  <head lang="en">
     <meta charset="UTF-8">
     <title>Conshiteration</title>
 
@@ -12,11 +12,20 @@
 
     <!-- Site CSS-->
     <link rel="stylesheet" href="styles/site.css"/>
-</head>
+  </head>
 
-<body>
+  <body>
 
+    <div ng-controller="HeaderCtrl as headerCtrl">
+      <div ng-include src="'modules/navigation/header.html'"></div>
+    </div>
 
-<script src="bower_components/requirejs/require.js" data-main="main.js"></script>
-</body>
+    <div ui-view></div>
+
+    <div ng-controller="FooterCtrl as footerCtrl">
+      <div ng-include src="'modules/navigation/footer.html'"></div>
+    </div>
+
+    <script src="bower_components/requirejs/require.js" data-main="main.js"></script>
+  </body>
 </html>
