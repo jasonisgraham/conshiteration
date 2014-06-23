@@ -6,7 +6,7 @@ define([], function () {
     $stateProvider
       .state('add-bathroom', {
         url: "/add-bathroom",
-        templateUrl: "modules/add-bathroom/add-bathroom.html",
+        templateUrl: "modules/bathroom/add-bathroom.html",
         resolve: {
           data: function (ApiService) {
             console.log("add-bathroom");

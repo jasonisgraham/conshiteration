@@ -40,7 +40,7 @@ define(function (require) {
     var uiRouter = require('angular-ui-router');
     var navigation = require('modules/navigation/navigation');
     var api = require('api/api');
-    var addBathroom = require('modules/add-bathroom/add-bathroom');
+    var addBathroom = require('modules/bathroom/bathroom');
     var landing = require('modules/landing/landing');
     var routerConfig = require('router-config');
 
