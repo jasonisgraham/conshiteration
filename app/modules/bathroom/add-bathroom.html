@@ -1,0 +1,44 @@
+<section ng-controller="AddBathroomCtrl as addBathroomCtrl">
+    <div ng-class="{'modal-header' : addBathroomCtrl.isModal}">
+        <h4 ng-class="{'modal-title' : addBathroomCtrl.isModal}">Add a Bathroom</h4>
+    </div>
+    <div ng-class="{'modal-body' : addBathroomCtrl.isModal}">
+        <form name="addBathroomForm" novalidate>
+            <div ng-show="addBathroomCtrl.formSuccess" class="bg-success pad-all mgn-t-b">
+                {{addBathroomCtrl.formSuccess}}
+            </div>
+            <div ng-show="addBathroomCtrl.formGeneralError" class="bg-danger pad-all mgn-t-b">
+                {{addBathroomCtrl.formGeneralError}}
+            </div>
+            <fieldset class="form-group" ng-class="{'has-error' : addBathroomCtrl.formErrors.bathroom}">
+                <label class="control-label" for="bathroom.name">Name</label>
+                <input type="text" class="form-control" id="bathroom" name="bathroom"
+                       ng-model="addBathroomCtrl.bathroom.name" autocomplete="off"
+                       ng-click="addBathroomCtrl.clearFormError('bathroom')" required auto-focus>
+                <br />
+                <label class="control-label" for="bathroom.gender">Gender</label>
+                <select ng-model="addBathroomCtrl.bathroom.gender"
+                        id="bathroomGender" name="bathroomGender"
+                        ng-click="addBathroomCtrl.clearFormError('bathroomGender')" required auto-focus>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+                <br />
+
+                <label class="control-label" for="bathroomHasSensor">Has Sensor</label>
+                <input type="checkbox" id="bathroomHasSensor" name="bathroomHasSensor"
+                       ng-model="addBathroomCtrl.bathroomHasSensor"
+                       ng-click="addBathroomCtrl.clearFormError('bathroomHasSensor')">
+
+                <div class="bg-danger field-error" ng-show="addBathroomCtrl.formErrors.bathroom">
+                    {{addBathroomCtrl.formErrors.bathroom.message}}
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div ng-class="{'modal-footer' : addBathroomCtrl.isModal}">
+        <button ng-click="addBathroomCtrl.saveBathroom(addBathroomCtrl.bathroom)"
+                class="btn btn-primary">Add
+        </button>
+    </div>
+</section>
